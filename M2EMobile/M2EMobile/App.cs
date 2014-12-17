@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using M2EMobile.Services;
+using M2EMobile.Views;
 using Xamarin.Forms;
 
 namespace M2EMobile
@@ -26,17 +27,17 @@ namespace M2EMobile
 
         public static Page GetMainPage()
         {
-            var employeeList = new ContentPage();
+            var userHomeView = new ContentPage();
             if (uiImplementation == UIImplementation.CSharp)
             {
-                employeeList = new UserHomeView();
+                userHomeView = new UserHomeView();
             }
             else if (uiImplementation == UIImplementation.Xaml)
             {
                 //employeeList = new EmployeeListXaml();
             }
 
-            return new NavigationPage(employeeList);
+            return new NavigationPage(userHomeView);
         }
     }
 }
