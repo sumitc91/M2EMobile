@@ -3,6 +3,8 @@ C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\M2EMobile
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\SQLite.Net.Async-PCL.2.4.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.Async.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\SQLite.Net-PCL.2.4.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\SQLite.Net.Platform.XamarinAndroid.2.4.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\Microsoft.Net.Http.2.2.28\lib\monoandroid\System.Net.Http.Extensions.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\Microsoft.Net.Http.2.2.28\lib\monoandroid\System.Net.Http.Primitives.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\Xamarin.Android.Support.v4.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Core.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
