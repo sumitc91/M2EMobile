@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using M2EMobile.Data;
 using M2EMobile.Services;
+using M2EMobile.ViewModels;
 using M2EMobile.Views;
 using Xamarin.Forms;
 
@@ -38,6 +40,19 @@ namespace M2EMobile
             }
 
             return new NavigationPage(userHomeView);
+        }
+
+        static TodoItemDatabase database;
+        public static TodoItemDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new TodoItemDatabase();
+                }
+                return database;
+            }
         }
     }
 }
