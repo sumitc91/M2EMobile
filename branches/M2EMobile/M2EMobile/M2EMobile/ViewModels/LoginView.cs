@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using M2EMobile.Models;
+using M2EMobile.Views;
 using Xamarin.Forms;
 
 namespace M2EMobile.ViewModels
@@ -80,9 +82,9 @@ namespace M2EMobile.ViewModels
 
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
-            base.OnAppearing();
+            base.OnAppearing();           
         }
 
         private void OnLoginClicked(object sender, EventArgs e)
@@ -94,9 +96,30 @@ namespace M2EMobile.ViewModels
                 .ContinueWith(_ =>
                 {
                     App.LastUseTime = System.DateTime.UtcNow;
+                    //Navigation.PushModalAsync(new UserHomeView());
                     Navigation.PopAsync();
                 });
 
+                var res = App.Database.GetItemByUsername("sumitchourasia91@gmail.com");
+                
+                if (res == null)
+                {
+                    App.Database.SaveItem(
+                        new TodoItem
+                    {
+                        Done = false,
+                        IsLoggedIn = true,
+                        Username = "sumitchourasia91@gmail.com",
+                        Notes = "Notes",
+                        Name = "Sumit Chourasia",
+                        FirstName = "Sumit",
+                        LastName = "Chourasia",
+                        Password = "password"
+
+                    });
+                }
+                var resAll = App.Database.GetItems();
+                //Navigation.PushModalAsync(new UserHomeView());
                 Navigation.PopModalAsync();
             }
             else
@@ -109,5 +132,7 @@ namespace M2EMobile.ViewModels
         {
             DisplayAlert("Help", "Enter any username and password", "OK", null);
         }
+
+
     }
 }

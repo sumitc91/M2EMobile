@@ -7,3 +7,14 @@ H:\PcOnGo_SVN\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Xamarin.Forms.Xam
 H:\PcOnGo_SVN\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.csprojResolveAssemblyReference.cache
 H:\PcOnGo_SVN\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.dll
 H:\PcOnGo_SVN\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.pdb
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\M2EMobile.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\M2EMobile.pdb
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Xamarin.Forms.Core.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Xamarin.Forms.Core.xml
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.csprojResolveAssemblyReference.cache
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.pdb
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\SQLite.Net.Async.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\SQLite.Net.dll

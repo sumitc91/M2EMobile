@@ -54,22 +54,26 @@ namespace M2EMobile.ViewModels
         public Task LoginAsync(CancellationToken cancellationToken)
         {
             IsBusy = true;
-            return service
-                .LoginAsync(Username, Password,"user", cancellationToken)
-                .ContinueWith(t =>
-                {
-                    IsBusy = false;
-                    if (t.IsFaulted)
-                        throw new AggregateException(t.Exception);
-                }, cancellationToken, TaskContinuationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
+            //return service
+            //    .LoginAsync(Username, Password,"user", cancellationToken)
+            //    .ContinueWith(t =>
+            //    {
+            //        IsBusy = false;
+            //        if (t.IsFaulted)
+            //            throw new AggregateException(t.Exception);
+            //    }, cancellationToken, TaskContinuationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
+            return new DirectoryService().LoginAsync(Username, Password, "user", cancellationToken);
         }
 
         public static bool ShouldShowLogin(DateTime? lastUseTime)
         {
-            if (!lastUseTime.HasValue)
-                return true;
+            //if (!lastUseTime.HasValue)
+            //    return true;
 
-            return (DateTime.UtcNow - lastUseTime) > ForceLoginTimespan;
+            //return (DateTime.UtcNow - lastUseTime) > ForceLoginTimespan;
+            var res = App.Database.GetItemByUsername("sumitchourasia91@gmail.com");
+            return (res == null);
         }
+
     }
 }

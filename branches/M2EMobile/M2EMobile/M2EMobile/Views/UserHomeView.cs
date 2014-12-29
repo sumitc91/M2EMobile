@@ -25,7 +25,7 @@ namespace M2EMobile.Views
         {
             base.OnAppearing();
             if (LoginViewModel.ShouldShowLogin(App.LastUseTime))
-                await Navigation.PushModalAsync(new LoginView());
+                await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
     }
 }
