@@ -74,6 +74,5 @@ namespace M2EMobile.ViewModels
             var res = App.Database.GetItemByUsername("sumitchourasia91@gmail.com");
             return (res == null);
         }
-
     }
 }

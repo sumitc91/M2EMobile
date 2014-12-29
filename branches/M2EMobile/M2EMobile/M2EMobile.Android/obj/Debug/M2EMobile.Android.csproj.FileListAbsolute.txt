@@ -44,3 +44,8 @@ C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\S
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\SQLite.Net.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\SQLite.Net.Platform.XamarinAndroid.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\obj\Debug\res\raw\todosqlite.db3
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\M2EMobile.Android.dll.config
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\System.Net.Http.Extensions.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\System.Net.Http.Primitives.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\System.Net.Http.Extensions.xml
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\System.Net.Http.Primitives.xml
