@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using M2EMobile.Models.Constants;
+using M2EMobile.Models.DataWrapper;
 using M2EMobile.Services;
+using M2EMobile.SSO;
+using Newtonsoft.Json;
 
 namespace M2EMobile.ViewModels
 {
@@ -51,18 +55,23 @@ namespace M2EMobile.ViewModels
             Password = "";
         }
 
-        public Task LoginAsync(CancellationToken cancellationToken)
+        public async Task<String> LoginAsync(String username,String password,CancellationToken cancellationToken)
         {
             IsBusy = true;
-            //return service
-            //    .LoginAsync(Username, Password,"user", cancellationToken)
-            //    .ContinueWith(t =>
-            //    {
-            //        IsBusy = false;
-            //        if (t.IsFaulted)
-            //            throw new AggregateException(t.Exception);
-            //    }, cancellationToken, TaskContinuationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
-            return new DirectoryService().LoginAsync(Username, Password, "user", cancellationToken);
+            LoginRequest loginData = new LoginRequest
+            {
+                KeepMeSignedInCheckBox = "true",
+                Password = password,
+                Type = "web",
+                UserName = username
+            };
+
+            var postJson = JsonConvert.SerializeObject(loginData);
+            Task<String> response = M2ESSOClient.MakePostRequest(Constants.serverContextUrl + "/Auth/Login", postJson,
+                null);
+            String result = await response;
+            //int len = result.Length;
+            return result;
         }
 
         public static bool ShouldShowLogin(DateTime? lastUseTime)
@@ -71,8 +80,10 @@ namespace M2EMobile.ViewModels
             //    return true;
 
             //return (DateTime.UtcNow - lastUseTime) > ForceLoginTimespan;
-            var res = App.Database.GetItemByUsername("sumitchourasia91@gmail.com");
-            return (res == null);
+            var res = App.Database.GetItems();
+            if(res.Count()>1) App.Database.DeleteItems();
+            res = App.Database.GetItems();
+            return (res.Count() != 1);
         }
     }
 }

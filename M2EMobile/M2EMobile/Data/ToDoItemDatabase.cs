@@ -53,6 +53,14 @@ namespace M2EMobile.Data
             }
         }
 
+        public void DeleteItems()
+        {
+            lock (locker)
+            {
+                database.Query<TodoItem>("DELETE FROM [TodoItem]");
+            }
+        }
+
         public TodoItem GetItemByUsername(string username)
         {
             return database.Table<TodoItem>().FirstOrDefault(x => x.Username == username);
