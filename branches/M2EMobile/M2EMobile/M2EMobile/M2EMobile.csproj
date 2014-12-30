@@ -38,6 +38,8 @@
     <Compile Include="Data\ToDoItemDatabase.cs" />
     <Compile Include="IPhoneFeatureService.cs" />
     <Compile Include="ISQLite.cs" />
+    <Compile Include="Models\Constants\Constants.cs" />
+    <Compile Include="Models\DataWrapper\LoginRequest.cs" />
     <Compile Include="Models\ToDoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DirectoryService.cs" />
