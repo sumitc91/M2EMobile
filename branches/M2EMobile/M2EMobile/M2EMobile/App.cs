@@ -29,17 +29,18 @@ namespace M2EMobile
 
         public static Page GetMainPage()
         {
-            var userHomeView = new ContentPage();
+            var preLoginPage = new ContentPage();
             if (uiImplementation == UIImplementation.CSharp)
             {
-                userHomeView = new UserHomeView();
+                //userHomeView = new UserHomeView();
+                preLoginPage = new PleaseLoginMessagePage();
             }
             else if (uiImplementation == UIImplementation.Xaml)
             {
                 //employeeList = new EmployeeListXaml();
             }
 
-            return new NavigationPage(userHomeView);
+            return new NavigationPage(preLoginPage);
         }
 
         static TodoItemDatabase database;

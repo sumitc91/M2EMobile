@@ -87,44 +87,40 @@ namespace M2EMobile.ViewModels
             base.OnAppearing();           
         }
 
-        private void OnLoginClicked(object sender, EventArgs e)
+        private async void OnLoginClicked(object sender, EventArgs e)
         {
             if (loginViewModel.CanLogin)
             {
-                loginViewModel
-                .LoginAsync(System.Threading.CancellationToken.None)
-                .ContinueWith(_ =>
-                {
-                    App.LastUseTime = System.DateTime.UtcNow;
-                    //Navigation.PushModalAsync(new UserHomeView());
-                    Navigation.PopAsync();
-                });
-
-                var res = App.Database.GetItemByUsername("sumitchourasia91@gmail.com");
+                Task<String> response = loginViewModel
+                    .LoginAsync(loginViewModel.Username, loginViewModel.Password,
+                        System.Threading.CancellationToken.None);
+                String userData = await response;
                 
-                if (res == null)
+                var res = App.Database.GetItems();
+                
+                if (res.Count() != 1)
                 {
                     App.Database.SaveItem(
                         new TodoItem
                     {
                         Done = false,
                         IsLoggedIn = true,
-                        Username = "sumitchourasia91@gmail.com",
+                        Username = loginViewModel.Username,
                         Notes = "Notes",
                         Name = "Sumit Chourasia",
                         FirstName = "Sumit",
                         LastName = "Chourasia",
-                        Password = "password"
+                        Password = loginViewModel.Password
 
                     });
                 }
-                var resAll = App.Database.GetItems();
+                //var resAll = App.Database.GetItems();
                 //Navigation.PushModalAsync(new UserHomeView());
-                Navigation.PopModalAsync();
+                await Navigation.PopModalAsync();
             }
             else
             {
-                DisplayAlert("Error", loginViewModel.ValidationErrors, "OK", null);
+                await DisplayAlert("Error", loginViewModel.ValidationErrors, "OK", null);
             }
         }
 

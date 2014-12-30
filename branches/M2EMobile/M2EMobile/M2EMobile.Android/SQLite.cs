@@ -27,7 +27,7 @@ namespace M2EMobile.Droid
 
         public global::SQLite.Net.SQLiteConnection GetConnection()
         {
-            var sqliteFilename = "TodoSQLite.db3";
+            var sqliteFilename = "M2ESQLite.db3";
             string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
                 // Documents folder
             var path = Path.Combine(documentsPath, sqliteFilename);

@@ -33,9 +33,21 @@ namespace M2EMobile.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            Task<String> response = new M2ESSOClient().HttpPostLoginAsync("", "", "", "http://www.cautom.com/Auth/Login");
-            String result = await response;
-            int len = result.Length;
+            //LoginRequest loginData = new LoginRequest
+            //{
+            //    KeepMeSignedInCheckBox = "true",
+            //    Password = "password",
+            //    Type = "web",
+            //    UserName = "sumitchourasia91@gmail.com"
+            //};
+
+            //var postJson = JsonConvert.SerializeObject(loginData);
+
+            ////Task<String> response = new M2ESSOClient().HttpPostLoginAsync("", "", "", Constants.serverContextUrl+"/Auth/Login");
+            //Task<String> response = M2ESSOClient.MakePostRequest(Constants.serverContextUrl + "/Auth/Login", postJson,
+            //    null);
+            //String result = await response;
+            //int len = result.Length;
             
             if (LoginViewModel.ShouldShowLogin(App.LastUseTime))
                 await Navigation.PushModalAsync(new NavigationPage(new LoginView()));

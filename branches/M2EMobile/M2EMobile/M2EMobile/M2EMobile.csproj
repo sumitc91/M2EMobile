@@ -39,7 +39,9 @@
     <Compile Include="IPhoneFeatureService.cs" />
     <Compile Include="ISQLite.cs" />
     <Compile Include="Models\Constants\Constants.cs" />
+    <Compile Include="Models\DataResponse\LoginResponse.cs" />
     <Compile Include="Models\DataWrapper\LoginRequest.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\ToDoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DirectoryService.cs" />
@@ -48,6 +50,7 @@
     <Compile Include="ViewModels\LoginView.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\PleaseLoginMessagePage.cs" />
     <Compile Include="Views\UserHomeView.cs" />
   </ItemGroup>
   <ItemGroup>

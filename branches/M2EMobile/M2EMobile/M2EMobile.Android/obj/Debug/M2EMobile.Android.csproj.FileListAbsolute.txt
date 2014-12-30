@@ -51,3 +51,7 @@ C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\obj\Debug\r
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\obj\Debug\res\drawable\icon.png
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\obj\Debug\R.cs.flag
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\obj\Debug\uploadflags.txt
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.Android\bin\Debug\Microsoft.Threading.Tasks.xml
