@@ -39,7 +39,12 @@
     <Compile Include="IPhoneFeatureService.cs" />
     <Compile Include="ISQLite.cs" />
     <Compile Include="Models\Constants\Constants.cs" />
+    <Compile Include="Models\DataResponse\ClientDetailsModel.cs" />
     <Compile Include="Models\DataResponse\LoginResponse.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\UserMessageList.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\UserMessagesResponse.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\UserNotificationList.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\UserNotificationsResponse.cs" />
     <Compile Include="Models\DataWrapper\LoginRequest.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\ToDoItem.cs" />

@@ -6,7 +6,9 @@ using System.Net.Http;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using M2EMobile.Models;
 using M2EMobile.Models.Constants;
+using M2EMobile.Models.DataResponse;
 using M2EMobile.Models.DataWrapper;
 using M2EMobile.SSO;
 using M2EMobile.ViewModels;
@@ -45,8 +47,8 @@ namespace M2EMobile.Views
             base.OnAppearing();
             Task<String> userDetailAsync = GetUserDetailsAsync();
             String userDetailString = await userDetailAsync;
-            //var userDetail = JsonConvert.DeserializeObject<ResponseModel<>>(userDetailString);
-            int len = userDetail.Length;
+            var userDetail = JsonConvert.DeserializeObject<ResponseModel<ClientDetailsModel>>(userDetailString);
+            int len = userDetailString.Length;
         }
 
     }
