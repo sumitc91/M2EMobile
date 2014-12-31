@@ -19,36 +19,11 @@ using WebRequest = System.Net.WebRequest;
 
 namespace M2EMobile.Views
 {
-    class UserHomeView : ContentPage
+    class UserHomeView 
     {
-
-        public UserHomeView()
+        public Page GetUserHomeView()
         {            
-            Content = new Label
-            {
-                Text = "Hello,New Forms !",
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-            };
-        }
-
-        public async Task<string> GetUserDetailsAsync()
-        {
-            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
-
-            var userDetailAsync =
-                M2ESSOClient.MakePostRequestWithHeaders(
-                    Constants.serverContextUrl + "/Client/GetClientDetails?userType=user", null, null, SQLiteInfo.UTMZK,
-                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
-            return await userDetailAsync;
-        }
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            Task<String> userDetailAsync = GetUserDetailsAsync();
-            String userDetailString = await userDetailAsync;
-            var userDetail = JsonConvert.DeserializeObject<ResponseModel<ClientDetailsModel>>(userDetailString);
-            int len = userDetailString.Length;
+            return UserRootPage.GetUserRootPage();
         }
 
     }

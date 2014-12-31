@@ -11,8 +11,14 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int icon=0x7f020000;
-        public static final int monoandroidsplash=0x7f020001;
+        public static final int account=0x7f020000;
+        public static final int accounts=0x7f020001;
+        public static final int contracts=0x7f020002;
+        public static final int icon=0x7f020003;
+        public static final int lead=0x7f020004;
+        public static final int monoandroidsplash=0x7f020005;
+        public static final int opportunity=0x7f020006;
+        public static final int settings=0x7f020007;
     }
     public static final class raw {
         public static final int todosqlite=0x7f030000;

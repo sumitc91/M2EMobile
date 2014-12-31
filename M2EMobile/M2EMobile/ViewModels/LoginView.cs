@@ -130,7 +130,7 @@ namespace M2EMobile.ViewModels
                     await DisplayAlert("Success", "Succesfully logged in!!!", "OK", null);
                     await Navigation.PopModalAsync();
                     
-                    await Navigation.PushModalAsync(new NavigationPage(new UserHomeView()));
+                    await Navigation.PushModalAsync(new UserHomeView().GetUserHomeView());
                 }
                 else if (authInfo.Status == 401)
                 {

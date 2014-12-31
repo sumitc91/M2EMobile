@@ -38,6 +38,7 @@
     <Compile Include="Data\ToDoItemDatabase.cs" />
     <Compile Include="IPhoneFeatureService.cs" />
     <Compile Include="ISQLite.cs" />
+    <Compile Include="Models\Binding\UserDetailPageBinding.cs" />
     <Compile Include="Models\Constants\Constants.cs" />
     <Compile Include="Models\DataResponse\ClientDetailsModel.cs" />
     <Compile Include="Models\DataResponse\LoginResponse.cs" />
@@ -55,8 +56,14 @@
     <Compile Include="ViewModels\LoginView.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\Pages\AccountsPage.cs" />
+    <Compile Include="Views\Pages\ContractsPage.cs" />
+    <Compile Include="Views\Pages\LeadsPage.cs" />
+    <Compile Include="Views\Pages\OpportunitiesPage.cs" />
+    <Compile Include="Views\Pages\UserDetailPage.cs" />
     <Compile Include="Views\PleaseLoginMessagePage.cs" />
     <Compile Include="Views\UserHomeView.cs" />
+    <Compile Include="Views\UserRootPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
