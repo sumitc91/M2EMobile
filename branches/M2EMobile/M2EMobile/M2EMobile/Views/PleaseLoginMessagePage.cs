@@ -75,7 +75,7 @@ namespace M2EMobile.Views
                     App.Database.UpdateItemFromUsername(loginData.UserName,authInfo.Payload.UTMZT,authInfo.Payload.UTMZK,authInfo.Payload.UTMZV);
                     //await DisplayAlert("Success", "Succesfully logged in!!!", "OK", null);
                     
-                    await Navigation.PushModalAsync(new NavigationPage(new UserHomeView()));
+                    await Navigation.PushModalAsync(new UserHomeView().GetUserHomeView());
                 }
                 else if(authInfo.Status == 401)
                 {

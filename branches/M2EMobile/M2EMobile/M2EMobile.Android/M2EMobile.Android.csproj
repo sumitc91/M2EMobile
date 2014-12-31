@@ -101,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Drawable\account.png" />
+    <AndroidResource Include="Resources\Drawable\accounts.png" />
+    <AndroidResource Include="Resources\Drawable\contracts.png" />
+    <AndroidResource Include="Resources\Drawable\lead.png" />
+    <AndroidResource Include="Resources\Drawable\opportunity.png" />
+    <AndroidResource Include="Resources\Drawable\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\M2EMobile\M2EMobile.csproj">
