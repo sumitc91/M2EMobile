@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using M2EMobile.Models;
+using M2EMobile.Models.DataResponse;
 using M2EMobile.Views;
+using Newtonsoft.Json;
 using Xamarin.Forms;
+using Button = Xamarin.Forms.Button;
+using Image = Xamarin.Forms.Image;
 
 namespace M2EMobile.ViewModels
 {
@@ -97,26 +102,45 @@ namespace M2EMobile.ViewModels
                 String userData = await response;
                 
                 var res = App.Database.GetItems();
-                
-                if (res.Count() != 1)
-                {
-                    App.Database.SaveItem(
-                        new TodoItem
-                    {
-                        Done = false,
-                        IsLoggedIn = true,
-                        Username = loginViewModel.Username,
-                        Notes = "Notes",
-                        Name = "Sumit Chourasia",
-                        FirstName = "Sumit",
-                        LastName = "Chourasia",
-                        Password = loginViewModel.Password
-
-                    });
-                }
+                                
                 //var resAll = App.Database.GetItems();
                 //Navigation.PushModalAsync(new UserHomeView());
-                await Navigation.PopModalAsync();
+                var authInfo = JsonConvert.DeserializeObject<ResponseModel<LoginResponse>>(userData);
+                if (authInfo.Status == 200)
+                {
+                    if (res.Count() != 1)
+                    {
+                        App.Database.SaveItem(
+                            new TodoItem
+                            {
+                                Done = false,
+                                IsLoggedIn = true,
+                                Username = loginViewModel.Username,
+                                Notes = "Notes",
+                                Name = "Sumit Chourasia",
+                                FirstName = "Sumit",
+                                LastName = "Chourasia",
+                                Password = loginViewModel.Password,
+                                TokenId = authInfo.Payload.UTMZT,
+                                UTMZK = authInfo.Payload.UTMZK,
+                                UTMZV = authInfo.Payload.UTMZV,
+                                UserType = loginViewModel.UserType
+                            });
+                    }
+                    await DisplayAlert("Success", "Succesfully logged in!!!", "OK", null);
+                    await Navigation.PopModalAsync();
+                    
+                    await Navigation.PushModalAsync(new NavigationPage(new UserHomeView()));
+                }
+                else if (authInfo.Status == 401)
+                {
+                    await DisplayAlert("Unauthorized", "Username/Password Incorrect !!!", "OK", null);
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Internal Server Error Occured!!!", "OK", null);
+                }
+                
             }
             else
             {
