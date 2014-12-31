@@ -82,7 +82,7 @@ namespace M2EMobile.ViewModels
             //return (DateTime.UtcNow - lastUseTime) > ForceLoginTimespan;
             var res = App.Database.GetItems();
             if(res.Count()>1) App.Database.DeleteItems();
-            res = App.Database.GetItems();
+            //res = App.Database.GetItems();
             return (res.Count() != 1);
         }
     }

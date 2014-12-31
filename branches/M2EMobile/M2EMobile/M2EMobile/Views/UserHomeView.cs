@@ -21,7 +21,7 @@ namespace M2EMobile.Views
     {
 
         public UserHomeView()
-        {
+        {            
             Content = new Label
             {
                 Text = "Hello,New Forms !",
@@ -30,27 +30,23 @@ namespace M2EMobile.Views
             };
         }
 
+        public async Task<string> GetUserDetailsAsync()
+        {
+            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
+
+            var userDetailAsync =
+                M2ESSOClient.MakePostRequestWithHeaders(
+                    Constants.serverContextUrl + "/Client/GetClientDetails?userType=user", null, null, SQLiteInfo.UTMZK,
+                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
+            return await userDetailAsync;
+        }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            //LoginRequest loginData = new LoginRequest
-            //{
-            //    KeepMeSignedInCheckBox = "true",
-            //    Password = "password",
-            //    Type = "web",
-            //    UserName = "sumitchourasia91@gmail.com"
-            //};
-
-            //var postJson = JsonConvert.SerializeObject(loginData);
-
-            ////Task<String> response = new M2ESSOClient().HttpPostLoginAsync("", "", "", Constants.serverContextUrl+"/Auth/Login");
-            //Task<String> response = M2ESSOClient.MakePostRequest(Constants.serverContextUrl + "/Auth/Login", postJson,
-            //    null);
-            //String result = await response;
-            //int len = result.Length;
-            
-            if (LoginViewModel.ShouldShowLogin(App.LastUseTime))
-                await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+            Task<String> userDetailAsync = GetUserDetailsAsync();
+            String userDetailString = await userDetailAsync;
+            //var userDetail = JsonConvert.DeserializeObject<ResponseModel<>>(userDetailString);
+            int len = userDetail.Length;
         }
 
     }

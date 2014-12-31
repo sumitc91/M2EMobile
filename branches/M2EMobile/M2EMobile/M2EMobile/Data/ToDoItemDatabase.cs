@@ -66,6 +66,14 @@ namespace M2EMobile.Data
             return database.Table<TodoItem>().FirstOrDefault(x => x.Username == username);
         }
 
+        public void UpdateItemFromUsername(string username,string TokenID,string UTMZK,string UTMZV)
+        {
+            lock (locker)
+            {
+                database.Query<TodoItem>("UPDATE [TodoItem] SET TokenId = '" + TokenID + "',UTMZK= '" + UTMZK + "', UTMZV = '" + UTMZV + "' WHERE Username = '" + username + "';");
+            }
+        }
+
         public int SaveItem(TodoItem item)
         {
             lock (locker)
@@ -89,5 +97,6 @@ namespace M2EMobile.Data
                 return database.Delete<TodoItem>(id);
             }
         }
+        
     }
 }

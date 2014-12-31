@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using M2EMobile.Models;
 using M2EMobile.Models.DataWrapper;
 using Newtonsoft.Json;
 
@@ -28,6 +29,18 @@ namespace M2EMobile.SSO
             // await! control returns to the caller and the task continues to run on another thread
             //string contents = await contentsTask;
             return await contentsTask;;
+        }
+
+
+        public static TodoItem GetUserInfoFromSQLite()
+        {
+            var _dbData = App.Database.GetItems();
+            TodoItem item = new TodoItem();
+            foreach (var data in _dbData)
+            {
+                item = data;
+            }
+            return item;
         }
 
         public static async Task<string> MakeGetRequest(string url, string cookie)
@@ -59,6 +72,37 @@ namespace M2EMobile.SSO
                 request.ContentType = "application/x-www-form-urlencoded";
             request.Method = "POST";
             request.Headers["Cookie"] = cookie;
+            var stream = await request.GetRequestStreamAsync();
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.Write(data);
+                writer.Flush();
+                writer.Dispose();
+            }
+
+            var response = await request.GetResponseAsync();
+            var respStream = response.GetResponseStream();
+
+
+            using (StreamReader sr = new StreamReader(respStream))
+            {
+                //Need to return this response 
+                return sr.ReadToEnd();
+            }
+        }
+
+        public static async Task<string> MakePostRequestWithHeaders(string url, string data, string cookie,string UTMZK,string UTMZT,string UTMZV, bool isJson = true)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            if (isJson)
+                request.ContentType = "application/json";
+            else
+                request.ContentType = "application/x-www-form-urlencoded";
+            request.Method = "POST";
+            request.Headers["Cookie"] = cookie;
+            request.Headers["UTMZK"] = UTMZK;
+            request.Headers["UTMZT"] = UTMZT;
+            request.Headers["UTMZV"] = UTMZV;
             var stream = await request.GetRequestStreamAsync();
             using (var writer = new StreamWriter(stream))
             {

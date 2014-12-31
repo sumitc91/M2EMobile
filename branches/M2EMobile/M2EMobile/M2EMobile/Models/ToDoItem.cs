@@ -23,6 +23,10 @@ namespace M2EMobile.Models
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string TokenId { get; set; }
+        public string UTMZK { get; set; }
+        public string UTMZV { get; set; }
+        public string UserType { get; set; }
 
     }
 }
