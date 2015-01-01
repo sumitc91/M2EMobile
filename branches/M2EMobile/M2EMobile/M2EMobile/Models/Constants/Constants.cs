@@ -86,6 +86,13 @@ namespace M2EMobile.Models.Constants
 
         public const int picPerUserImageModeration = 5;
 
+        public const string pageName_Tasks = "New CITs";
+        public const string pageName_ActiveTasks = "Active CITs";
+        public const string pageName_CompletedTasks = "Completed CITs";
+        public const string pageName_FacebookLike = "Facebook Like";
+        public const string pageName_Referrals = "Referrals";
+        public const string logoutButtonText = "Logout";
+
         //public const string serverContextUrl = "http://localhost:5182";
         public const string serverContextUrl = "http://cautom.com";
     }

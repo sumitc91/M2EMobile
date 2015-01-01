@@ -23,7 +23,7 @@ namespace M2EMobile.Views
     {
         public Page GetUserHomeView()
         {            
-            return UserRootPage.GetUserRootPage();
+            return new UserRootPage().GetUserRootPage();
         }
 
     }

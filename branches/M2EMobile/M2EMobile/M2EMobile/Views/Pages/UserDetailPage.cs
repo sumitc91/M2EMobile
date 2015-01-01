@@ -8,6 +8,7 @@ using M2EMobile.Models;
 using M2EMobile.Models.Binding;
 using M2EMobile.Models.Constants;
 using M2EMobile.Models.DataResponse;
+using M2EMobile.Services;
 using M2EMobile.SSO;
 using M2EMobile.ViewModels;
 using Newtonsoft.Json;
@@ -97,21 +98,11 @@ namespace M2EMobile.Views.Pages
             App.Database.DeleteItems();
             await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
-
-        public async Task<string> GetUserDetailsAsync()
-        {
-            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
-
-            var userDetailAsync =
-                M2ESSOClient.MakePostRequestWithHeaders(
-                    Constants.serverContextUrl + "/Client/GetClientDetails?userType=user", null, null, SQLiteInfo.UTMZK,
-                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
-            return await userDetailAsync;
-        }
+        
         protected async void FetchUserDetailFromServer()
         {
             
-            Task<String> userDetailAsync = GetUserDetailsAsync();
+            Task<String> userDetailAsync =new UserDetailService().GetUserDetailsAsync();
             String userDetailString = await userDetailAsync;
             var userDetail = JsonConvert.DeserializeObject<ResponseModel<ClientDetailsModel>>(userDetailString);
             int len = userDetailString.Length;
