@@ -21,7 +21,7 @@ namespace M2EMobile.Views
             var layout = new StackLayout();
             var label = new Label
             {
-                Text = "You are not Logged in yet !",
+                Text = "Please wait...",
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
@@ -33,7 +33,7 @@ namespace M2EMobile.Views
             };
             logoutButton.Clicked += logoutButton_Clicked;
             layout.Children.Add(label);
-            layout.Children.Add(logoutButton);
+            //layout.Children.Add(logoutButton);
             Content = layout;
         }
 

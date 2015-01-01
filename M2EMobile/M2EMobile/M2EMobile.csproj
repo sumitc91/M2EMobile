@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DirectoryService.cs" />
     <Compile Include="Services\IDirectoryService.cs" />
+    <Compile Include="Services\UserDetailService.cs" />
     <Compile Include="SSO\M2ESSOClient.cs" />
     <Compile Include="ViewModels\LoginView.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
