@@ -20,5 +20,16 @@ namespace M2EMobile.Services
                     SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
             return await userDetailAsync;
         }
+
+        public async Task<string> GetUserAllTaskDetailsAsync()
+        {
+            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
+
+            var userAllTaskDetailAsync =
+                M2ESSOClient.MakePostRequestWithHeaders(
+                    Constants.serverContextUrl + "/User/GetAllTemplateInformation", null, null, SQLiteInfo.UTMZK,
+                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
+            return await userAllTaskDetailAsync;
+        }
     }
 }
