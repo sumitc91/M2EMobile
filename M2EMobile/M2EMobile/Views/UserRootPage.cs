@@ -11,6 +11,7 @@ using M2EMobile.Services;
 using M2EMobile.SSO;
 using M2EMobile.ViewModels;
 using M2EMobile.Views.Pages;
+using M2EMobile.Views.User;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Label = Xamarin.Forms.Label;
@@ -89,7 +90,7 @@ namespace M2EMobile.Views
                 switch (name)
                 {
                     case Constants.pageName_Tasks:
-                        MDPage.Detail =new UserDetailPage().GetAccountsPage();
+                        MDPage.Detail =new AllTasks().GetAllTasks();
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_ActiveTasks:
