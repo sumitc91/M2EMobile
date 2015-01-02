@@ -42,5 +42,27 @@ namespace M2EMobile.Services
                     SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
             return await userAllTaskDetailAsync;
         }
+
+        public async Task<string> GetUserActiveTaskDetailsAsync()
+        {
+            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
+
+            var userAllTaskDetailAsync =
+                M2ESSOClient.MakePostRequestWithHeaders(
+                    Constants.serverContextUrl + "/User/GetUserActiveThreads?status=active", null, null, SQLiteInfo.UTMZK,
+                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
+            return await userAllTaskDetailAsync;
+        }
+
+        public async Task<string> GetUserActiveSurveyDetailsUsingRefKeyAsync(string refKey)
+        {
+            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
+
+            var userActiveSurveyTaskDetailAsync =
+                M2ESSOClient.MakePostRequestWithHeaders(
+                    Constants.serverContextUrl + "/User/GetTemplateSurveyQuestionsByRefKey?refKey="+refKey, null, null, SQLiteInfo.UTMZK,
+                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
+            return await userActiveSurveyTaskDetailAsync;
+        }
     }
 }

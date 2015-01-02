@@ -43,6 +43,14 @@
     <Compile Include="Models\Constants\Constants.cs" />
     <Compile Include="Models\DataResponse\ClientDetailsModel.cs" />
     <Compile Include="Models\DataResponse\LoginResponse.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoInnerInstructionListData.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoInnerListData.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoInstruction.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoListBoxAnswerQuestion.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoMultipleAnswerQuestion.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoSingleAnswerQueston.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyInfoTextBoxAnswerQuestion.cs" />
+    <Compile Include="Models\DataResponse\UserResponse\Survey\UserSurveyResponse.cs" />
     <Compile Include="Models\DataResponse\UserResponse\UserMessageList.cs" />
     <Compile Include="Models\DataResponse\UserResponse\UserMessagesResponse.cs" />
     <Compile Include="Models\DataResponse\UserResponse\UserNotificationList.cs" />
@@ -67,7 +75,10 @@
     <Compile Include="Views\PleaseLoginMessagePage.cs" />
     <Compile Include="Views\UserHomeView.cs" />
     <Compile Include="Views\UserRootPage.cs" />
+    <Compile Include="Views\User\ActiveTasks.cs" />
     <Compile Include="Views\User\AllTasks.cs" />
+    <Compile Include="Views\User\UserActiveTaskInformation.cs" />
+    <Compile Include="Views\User\UserStartSurvey.cs" />
     <Compile Include="Views\User\UserTaskInformation.cs" />
   </ItemGroup>
   <ItemGroup>
