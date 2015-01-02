@@ -10,6 +10,17 @@ namespace M2EMobile.Services
 {
     public class UserDetailService
     {
+
+        public async Task<string> AcceptUserTaskByRefIdAsync(string refKey)
+        {
+            var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
+
+            var acceptUserTaskByRefIdResponse =
+                M2ESSOClient.MakePostRequestWithHeaders(
+                    Constants.serverContextUrl + "/User/AllocateThreadToUserByRefKey?refKey=" + refKey, null, null, SQLiteInfo.UTMZK,
+                    SQLiteInfo.TokenId, SQLiteInfo.UTMZV);
+            return await acceptUserTaskByRefIdResponse;
+        }
         public async Task<string> GetUserDetailsAsync()
         {
             var SQLiteInfo = M2ESSOClient.GetUserInfoFromSQLite();
