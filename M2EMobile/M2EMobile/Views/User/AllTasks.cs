@@ -27,19 +27,23 @@ namespace M2EMobile.Views.User
             contactList = new ListView
             {                
                 RowHeight = 50,
-                HasUnevenRows = true,                
+                HasUnevenRows = true,
+                
             };
             //userTaskInfo[0].earningPerThreads            
                        
             FetchUserAllTaskDetailFromServer();
 
-            contactList.ItemTemplate = new DataTemplate(typeof(TextCell));
-            contactList.ItemTemplate.SetBinding(TextCell.TextProperty, "title");
-            contactList.ItemTemplate.SetBinding(TextCell.DetailProperty, "earningPerThreads");
+            //contactList.ItemTemplate = new DataTemplate(typeof(TextCell));
+            //contactList.ItemTemplate.SetBinding(TextCell.TextProperty, "title");
+            //contactList.ItemTemplate.SetBinding(TextCell.DetailProperty, "earningPerThreads");
+
+            contactList.ItemTemplate = new DataTemplate(typeof(AllTaskListCell));
 
             return new ContentPage
             {
                 Padding = new Thickness(20),
+                //BackgroundColor = Color.Black,
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.FillAndExpand,
@@ -60,5 +64,120 @@ namespace M2EMobile.Views.User
             
         }
 
+    }
+
+    class AllTaskListCell : ViewCell
+    {
+        public AllTaskListCell()
+        {
+            var image = new Image
+            {
+                HorizontalOptions = LayoutOptions.Start
+            };
+            //image.SetBinding(Image.SourceProperty, new Binding("ImageUri"));
+            image.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/Y5DauNCs.jpg"));
+            image.WidthRequest = image.HeightRequest = 80;
+
+            var nameLayout = CreateNameLayout();
+            BoxView boxView = new BoxView();
+            boxView.HeightRequest = 1;
+            boxView.Color = Color.Silver;
+
+            var viewLayout = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                Children = { image, nameLayout }
+            };
+
+            var stackLayout = new StackLayout()
+            {
+                Children = { viewLayout, boxView }
+            };
+            View = stackLayout;
+        }
+
+        static StackLayout CreateNameLayout()
+        {
+
+            var titleLabel = new Label
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Font = Font.SystemFontOfSize(NamedSize.Small)
+            };
+            titleLabel.SetBinding(Label.TextProperty, "title");
+
+            var detailLabel = new Label
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+                //Font = Fonts.Twitter
+            };
+
+            var totalThreadLabel = new Label
+            {
+                Text = "CITs Total:",
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+            };
+
+            var totalThreadData = new Label
+            {
+                TextColor = Color.Yellow,
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+            };
+            totalThreadData.SetBinding(Label.TextProperty, "totalThreads");
+
+            var remainingThreadLabel = new Label
+            {
+                Text = " Remaining:",
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+            };
+            var remainingThreadData = new Label { 
+                TextColor = Color.Red,
+                Font = Font.SystemFontOfSize(NamedSize.Micro) 
+            };
+            remainingThreadData.SetBinding(Label.TextProperty, "remainingThreads");
+
+            var taskInfoLayout = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                Children = { totalThreadLabel, totalThreadData, remainingThreadLabel, remainingThreadData }
+            };
+
+            var maxEarningLabel = new Label
+            {
+                Text = "Max Earning:",
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+            };
+
+            var earningCurrencyData = new Label
+            {
+                TextColor = Color.Yellow,
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+            };
+            earningCurrencyData.SetBinding(Label.TextProperty, "currency");
+
+            var maxEarningData = new Label
+            {
+                TextColor = Color.Yellow,
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
+            };
+            maxEarningData.SetBinding(Label.TextProperty, "earningPerThreads");
+
+            var paymentInfoLayout = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                Children = { maxEarningLabel, earningCurrencyData, maxEarningData }
+            };
+
+            detailLabel.SetBinding(Label.TextProperty, "title");
+
+            var nameLayout = new StackLayout()
+            {
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+                Orientation = StackOrientation.Vertical,
+                Children = { titleLabel, detailLabel, taskInfoLayout, paymentInfoLayout }
+            };
+            return nameLayout;
+        }
     }
 }
