@@ -11,11 +11,6 @@ using Xamarin.Forms;
 
 namespace M2EMobile.Views.User
 {
-    public class TaskInfo
-    {
-        public string Title { get; set; }
-        public string Info { get; set; }
-    }
     
     class AllTasks : ContentPage
     {

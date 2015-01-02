@@ -94,7 +94,7 @@ namespace M2EMobile.Views
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_ActiveTasks:
-                        MDPage.Detail = new NavigationPage(new ContractsPage());
+                        MDPage.Detail = new NavigationPage(new ActiveTasks().GetActiveTasks());
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_CompletedTasks:
