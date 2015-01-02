@@ -43,6 +43,13 @@ namespace M2EMobile.Views
             await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
 
+        public void PopModalPageOnLogout()
+        {
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Navigation.PopToRootAsync();
+            });
+        }
         protected async override void OnAppearing()
         {
             base.OnAppearing();

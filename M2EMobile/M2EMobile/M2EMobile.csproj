@@ -68,6 +68,7 @@
     <Compile Include="Views\UserHomeView.cs" />
     <Compile Include="Views\UserRootPage.cs" />
     <Compile Include="Views\User\AllTasks.cs" />
+    <Compile Include="Views\User\UserTaskInformation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">

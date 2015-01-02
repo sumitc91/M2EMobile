@@ -16,7 +16,7 @@ namespace M2EMobile
         Xaml
     }
 
-    public class App
+    public class App :ContentPage
     {
         //Change the following line to switch between XAML and C# versions
         private static UIImplementation uiImplementation = UIImplementation.CSharp;
@@ -42,7 +42,7 @@ namespace M2EMobile
 
             return new NavigationPage(preLoginPage);
         }
-
+        
         static TodoItemDatabase database;
         public static TodoItemDatabase Database
         {
