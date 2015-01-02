@@ -18,6 +18,7 @@ namespace M2EMobile.Views
     {
         public PleaseLoginMessagePage()
         {
+
             var layout = new StackLayout();
             var label = new Label
             {
@@ -42,14 +43,7 @@ namespace M2EMobile.Views
             App.Database.DeleteItems();
             await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
-
-        public void PopModalPageOnLogout()
-        {
-            Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
-            {
-                await Navigation.PopToRootAsync();
-            });
-        }
+        
         protected async override void OnAppearing()
         {
             base.OnAppearing();

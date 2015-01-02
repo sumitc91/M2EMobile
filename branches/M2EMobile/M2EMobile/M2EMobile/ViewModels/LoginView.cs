@@ -31,8 +31,7 @@ namespace M2EMobile.ViewModels
 
         public LoginView()
         {
-            BindingContext = Model;
-
+            BindingContext = Model;            
             var logo = new Image
             {
                 Source = ImageSource.FromResource("M2EMobile.Resources.Images.logo.png"),

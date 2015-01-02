@@ -110,9 +110,8 @@ namespace M2EMobile.Views
                         MDPage.IsPresented = false;
                         break;
                     case Constants.logoutButtonText:
-                        App.Database.DeleteItems();
-                        new PleaseLoginMessagePage().PopModalPageOnLogout();
-                        new UserRootPage().PushAsyncModalPage(new LoginView());
+                        App.Database.DeleteItems();                        
+                        new UserRootPage().PushAsyncModalLoginPage();
                         break;
                     default: MDPage.Detail = new NavigationPage(new OpportunitiesPage());
                         MDPage.IsPresented = false;
@@ -122,12 +121,20 @@ namespace M2EMobile.Views
             };
             return button;
         }
-
+        
         public void PushAsyncModalPage(Page selectedItemPage)
         {
             Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
             {
-                await MDPage.Navigation.PushModalAsync(selectedItemPage);
+                await MDPage.Navigation.PushModalAsync(new NavigationPage(selectedItemPage));
+            });
+        }
+
+        public void PushAsyncModalLoginPage()
+        {
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+            {
+                await MDPage.Navigation.PushModalAsync(new LoginView());
             });
         }
 
