@@ -40,6 +40,26 @@ namespace M2EMobile.Views.User
 
             contactList.ItemTemplate = new DataTemplate(typeof(AllTaskListCell));
 
+            contactList.ItemSelected += async (sender, e) =>
+            {
+                var selectedItem = (UserProductSurveyTemplateModel)e.SelectedItem;
+                //await DisplayAlert("Tapped!", e.SelectedItem + " was tapped.", "OK",null);
+                var selectedItemPage = new UserTaskInformation(selectedItem); // so the new page shows correct data
+
+                new UserRootPage().PushAsyncModalPage(selectedItemPage);
+            };
+
+            var pageDetailLabel = new Label
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                Text = "All CITs"
+                //Font = Fonts.Twitter
+            };
+            BoxView boxView = new BoxView();
+            boxView.HeightRequest = 1;
+            boxView.Color = Color.Silver;
+
             return new ContentPage
             {
                 Padding = new Thickness(20),
@@ -47,7 +67,7 @@ namespace M2EMobile.Views.User
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.FillAndExpand,
-                    Children = { contactList }
+                    Children = { pageDetailLabel, boxView,contactList }
                 }
             };
         }
@@ -75,7 +95,7 @@ namespace M2EMobile.Views.User
                 HorizontalOptions = LayoutOptions.Start
             };
             //image.SetBinding(Image.SourceProperty, new Binding("ImageUri"));
-            image.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/Y5DauNCs.jpg"));
+            image.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/sn0Croys.jpg"));
             image.WidthRequest = image.HeightRequest = 80;
 
             var nameLayout = CreateNameLayout();

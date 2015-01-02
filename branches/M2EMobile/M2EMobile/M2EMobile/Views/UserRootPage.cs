@@ -72,7 +72,7 @@ namespace M2EMobile.Views
                         }
                     },
                 },
-                Detail =new UserDetailPage().GetAccountsPage()
+                Detail = new NavigationPage(new UserDetailPage().GetAccountsPage())
                 ,
             };
 		}
@@ -90,36 +90,45 @@ namespace M2EMobile.Views
                 switch (name)
                 {
                     case Constants.pageName_Tasks:
-                        MDPage.Detail =new AllTasks().GetAllTasks();
+                        MDPage.Detail =new NavigationPage(new AllTasks().GetAllTasks());
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_ActiveTasks:
-                        MDPage.Detail = new ContractsPage();
+                        MDPage.Detail = new NavigationPage(new ContractsPage());
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_CompletedTasks:
-                        MDPage.Detail = new LeadsPage();
+                        MDPage.Detail = new NavigationPage(new LeadsPage());
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_FacebookLike:
-                        MDPage.Detail = new LeadsPage();
+                        MDPage.Detail = new NavigationPage(new LeadsPage());
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_Referrals:
-                        MDPage.Detail = new LeadsPage();
+                        MDPage.Detail = new NavigationPage(new LeadsPage());
                         MDPage.IsPresented = false;
                         break;
                     case Constants.logoutButtonText:
                         App.Database.DeleteItems();
-                        Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+                        new PleaseLoginMessagePage().PopModalPageOnLogout();
+                        new UserRootPage().PushAsyncModalPage(new LoginView());
                         break;
-                    default: MDPage.Detail = new OpportunitiesPage();
+                    default: MDPage.Detail = new NavigationPage(new OpportunitiesPage());
                         MDPage.IsPresented = false;
                         break;
                 }                
                
             };
             return button;
+        }
+
+        public void PushAsyncModalPage(Page selectedItemPage)
+        {
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+            {
+                await MDPage.Navigation.PushModalAsync(selectedItemPage);
+            });
         }
 
         protected async void FetchUserDetailFromServer()

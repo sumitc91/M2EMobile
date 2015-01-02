@@ -75,28 +75,15 @@ namespace M2EMobile.Views.Pages
                 BindingContext = _userDetailPageData
             };
             totalEarning.SetBinding(Label.TextProperty, "TotalEarning");
-
-            var logoutButton = new Button
-            {
-                Text = "Logout",
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-            };
-            logoutButton.Clicked += logoutButton_Clicked;
+            
 
             layout.Children.Add(userImage);
             layout.Children.Add(firstName);
             layout.Children.Add(lastName);
             layout.Children.Add(reputationName);
             layout.Children.Add(totalEarning);
-            layout.Children.Add(logoutButton);
+            
             return new ContentPage { Content = layout };
-        }
-
-        protected async void logoutButton_Clicked(object sender, EventArgs e)
-        {
-            App.Database.DeleteItems();
-            await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
         
         protected async void FetchUserDetailFromServer()
