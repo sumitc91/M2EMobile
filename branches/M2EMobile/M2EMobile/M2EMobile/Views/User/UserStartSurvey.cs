@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace M2EMobile.Views.User
 {
-    public class UserStartSurvey:ContentPage
+    public class UserStartSurvey:CarouselPage
     {
         public UserStartSurvey(UserProductSurveyTemplateModel taskInfo)
         {
@@ -26,7 +26,12 @@ namespace M2EMobile.Views.User
             };            
             layout.Children.Add(label);
             //layout.Children.Add(logoutButton);
-            Content = layout;
+            //Content = layout;            
+             Children.Add(new ContentPage {Content = new BoxView {Color = new Color (1, 0, 0)}, Title = "Page 1"});
+            Children.Add(new ContentPage {Content = new BoxView {Color = new Color(1, 0, 0)}, Title = "Page 1"});
+            Children.Add(new ContentPage {Content = new BoxView {Color = new Color(0, 1, 0)}, Title = "Page 2"});
+            Children.Add(new ContentPage {Content = new BoxView {Color = new Color (0, 0, 1)}, Title = "Page 3"});            
+
         }
 
         protected async void FetchUserActiveSurveyDetailByRefKeyFromServer(string refKey)
