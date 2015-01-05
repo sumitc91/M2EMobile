@@ -162,5 +162,17 @@ namespace M2EMobile.Views.User
 
             new UserRootPage().PushAsyncModalPage(startSurveyPage);
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            App.HardwareBackPressed = () => Task.FromResult<bool?>(true);
+        }
+
+        protected async override void OnDisappearing()
+        {
+            base.OnAppearing();
+            App.HardwareBackPressed = () => Task.FromResult<bool?>(false);
+        }
     }
 }

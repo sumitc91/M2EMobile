@@ -36,8 +36,8 @@ namespace M2EMobile.Views
             var userImage = new Image
             {                
                 BindingContext = _userDetailPageData,                
-                WidthRequest = 100,
-                HeightRequest = 100,
+                WidthRequest = 60,
+                HeightRequest = 60,
             };
             userImage.SetBinding(Image.SourceProperty, "UserProfilePicImageSource");
             //userImage.Source = ImageSource.FromUri(new Uri("http://i.imgur.com/Y5DauNCm.jpg"));
@@ -48,9 +48,16 @@ namespace M2EMobile.Views
                 TextColor = Color.White
             };
             firstName.SetBinding(Label.TextProperty, "FirstName");
+            var lastName = new Label
+            {
+                BindingContext = _userDetailPageData,
+                TextColor = Color.White
+            };
+            lastName.SetBinding(Label.TextProperty, "LastName");
 
-            masterMenuAbsLayout.Children.Add(userImage, new Point(50, 50));
-            masterMenuAbsLayout.Children.Add(firstName, new Point(160, 120));
+            masterMenuAbsLayout.Children.Add(userImage, new Point(20, 5));
+            masterMenuAbsLayout.Children.Add(firstName, new Point(90, 30));
+            masterMenuAbsLayout.Children.Add(lastName, new Point(90, 45));
 
             return MDPage = new MasterDetailPage
             {
@@ -74,7 +81,15 @@ namespace M2EMobile.Views
                         }
                     },
                 },
-                Detail = new NavigationPage(new UserDetailPage().GetAccountsPage())
+                Detail = new NavigationPage(new ContentPage
+                {
+                    Content = new Label
+                    {
+                        Text = "Loading please wait...",
+                        VerticalOptions = LayoutOptions.CenterAndExpand,
+                        HorizontalOptions = LayoutOptions.CenterAndExpand,
+                    }
+                })
                 ,
             };
 		}
@@ -112,7 +127,8 @@ namespace M2EMobile.Views
                         MDPage.IsPresented = false;
                         break;
                     case Constants.logoutButtonText:
-                        App.Database.DeleteItems();                        
+                        App.Database.DeleteItems();
+                        //Navigation.PopModalAsync();
                         new UserRootPage().PushAsyncModalLoginPage();
                         break;
                     default: MDPage.Detail = new NavigationPage(new OpportunitiesPage());
@@ -148,10 +164,13 @@ namespace M2EMobile.Views
             var userDetail = JsonConvert.DeserializeObject<ResponseModel<ClientDetailsModel>>(userDetailString);
             int len = userDetailString.Length;
             _userDetailPageData.FirstName = userDetail.Payload.FirstName;
-            _userDetailPageData.LastName = "Last Name : " + userDetail.Payload.LastName;
+            _userDetailPageData.LastName = userDetail.Payload.LastName;
             _userDetailPageData.Reputation = "Reputation : " + userDetail.Payload.totalReputation;
             _userDetailPageData.TotalEarning = "TotalEarning : " + userDetail.Payload.availableBalance;
             _userDetailPageData.UserProfilePicImageSource = ImageSource.FromUri(new Uri(userDetail.Payload.imageUrl));
+            
+            MDPage.Detail = new NavigationPage(new AllTasks().GetAllTasks());
+            MDPage.IsPresented = false;
         }
 
         protected async override void OnAppearing()

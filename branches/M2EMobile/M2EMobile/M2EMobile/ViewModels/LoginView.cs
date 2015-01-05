@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using M2EMobile.Models;
 using M2EMobile.Models.DataResponse;
 using M2EMobile.Views;
@@ -31,18 +30,21 @@ namespace M2EMobile.ViewModels
 
         public LoginView()
         {
-            BindingContext = Model;            
+            BindingContext = Model;
+            BackgroundColor = Color.FromRgb(173, 216, 230);
+
             var logo = new Image
             {
-                Source = ImageSource.FromResource("M2EMobile.Resources.Images.logo.png"),
+                Source = ImageSource.FromResource("M2EMobile.Resources.Images.cautom_logo.png"),
                 HeightRequest = 33,
                 WidthRequest = 186
             };
-
-            var usernameEntry = new Entry { Placeholder = "Username" };
+                        
+            
+            var usernameEntry = new Entry { Placeholder = "Username",TextColor = Color.Gray};
             usernameEntry.SetBinding(Entry.TextProperty, "Username");
 
-            var passwordEntry = new Entry { IsPassword = true, Placeholder = "Password" };
+            var passwordEntry = new Entry { IsPassword = true, Placeholder = "Password", TextColor = Color.Gray };
             passwordEntry.SetBinding(Entry.TextProperty, "Password");
 
             var loginButton = new Button { Text = "Login" };

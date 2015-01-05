@@ -47,5 +47,7 @@ namespace M2EMobile.Views.User
             int len = userDetailString.Length;
 
         }
+        
+        
     }
 }

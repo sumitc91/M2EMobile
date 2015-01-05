@@ -12,6 +12,28 @@ namespace M2EMobile.Models.Binding
         public event PropertyChangedEventHandler PropertyChanged;
         public string _title;
         public string _info;
+        public bool _isBusy;
+
+        public bool IsBusy
+        {
+            set
+            {
+                if (_isBusy != value)
+                {
+                    _isBusy = value;
+
+                    if (PropertyChanged != null)
+                    {
+                        PropertyChanged(this,
+                            new PropertyChangedEventArgs("IsBusy"));
+                    }
+                }
+            }
+            get
+            {
+                return _isBusy;
+            }
+        }
 
         public String Title
         {
