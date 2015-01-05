@@ -42,4 +42,3 @@ C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\System.Da
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\System.EnterpriseServices.Wrapper.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.pdb
-C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\obj\Debug\M2EMobile.csprojResolveAssemblyReference.cache

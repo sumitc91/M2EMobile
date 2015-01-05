@@ -26,22 +26,22 @@ namespace M2EMobile.Views
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
-            var logoutButton = new Button
+            var logoImage = new Image
             {
-                Text = "Logout",
+                Aspect = Aspect.AspectFit,
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
-            logoutButton.Clicked += logoutButton_Clicked;
+            logoImage.HeightRequest = 50;
+            logoImage.WidthRequest = 200;
+            logoImage.Source = ImageSource.FromResource("M2EMobile.Resources.Images.cautom_logo.png");
+            //userImage.SetBinding(Image.SourceProperty, "UserProfilePicImageSource");
+            
+            layout.Children.Add(logoImage);
             layout.Children.Add(label);
+            BackgroundColor = Color.White;
             //layout.Children.Add(logoutButton);
             Content = layout;
-        }
-
-        protected async void logoutButton_Clicked(object sender, EventArgs e)
-        {
-            App.Database.DeleteItems();
-            await Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
         
         protected async override void OnAppearing()

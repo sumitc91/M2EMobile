@@ -16,6 +16,8 @@ namespace M2EMobile.Views.User
     {
         List<UserProductSurveyTemplateModel> userTaskInfo = new List<UserProductSurveyTemplateModel>();
         ListView contactList = new ListView();
+        ContentPage _allTasksPage = new ContentPage();
+
         public Page GetAllTasks()
         {
 
@@ -42,28 +44,23 @@ namespace M2EMobile.Views.User
                 var selectedItemPage = new UserTaskInformation(selectedItem); // so the new page shows correct data                
                 new UserRootPage().PushAsyncModalPage(selectedItemPage);                
             };
+            
 
-            var pageDetailLabel = new Label
-            {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Font = Font.SystemFontOfSize(NamedSize.Large),
-                Text = "All CITs"
-                //Font = Fonts.Twitter
-            };
-            BoxView boxView = new BoxView();
-            boxView.HeightRequest = 1;
-            boxView.Color = Color.Silver;
-
-            return new ContentPage
+            _allTasksPage = new ContentPage
             {
                 Padding = new Thickness(20),
+                Title = "All CITs",
+			    Icon = "Leads.png",
+                IsBusy = true,
                 //BackgroundColor = Color.Black,
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.FillAndExpand,
-                    Children = { pageDetailLabel, boxView,contactList }
+                    Children = {contactList }
                 }
             };
+
+            return _allTasksPage;
         }
 
         protected async void FetchUserAllTaskDetailFromServer()
@@ -75,9 +72,14 @@ namespace M2EMobile.Views.User
             userTaskInfo = userDetail.Payload;
             contactList.ItemsSource = userTaskInfo;
             int len = userDetailString.Length;
-            
+            await HideBusyIcon();
+
         }
 
+        protected async Task HideBusyIcon()
+        {
+            _allTasksPage.IsBusy = false;
+        }
     }
 
     class AllTaskListCell : ViewCell
