@@ -22,6 +22,19 @@ namespace M2EMobile.Droid
 
             SetPage(App.GetMainPage());
         }
+
+        public async override void OnBackPressed()
+        {
+            bool? result = await App.CallHardwareBackPressed();
+            if (result == true)
+            {
+                base.OnBackPressed();
+            }
+            else if (result == null)
+            {
+                Finish();
+            }
+        }
     }
 }
 
