@@ -35,13 +35,12 @@ namespace M2EMobile.Views.User
 
             contactList.ItemTemplate = new DataTemplate(typeof(AllTaskListCell));
 
-            contactList.ItemSelected += async (sender, e) =>
+            contactList.ItemTapped += async (sender, e) =>
             {
-                var selectedItem = (UserProductSurveyTemplateModel)e.SelectedItem;
+                var selectedItem = (UserProductSurveyTemplateModel)e.Item;
                 //await DisplayAlert("Tapped!", e.SelectedItem + " was tapped.", "OK",null);
-                var selectedItemPage = new UserTaskInformation(selectedItem); // so the new page shows correct data
-
-                new UserRootPage().PushAsyncModalPage(selectedItemPage);
+                var selectedItemPage = new UserTaskInformation(selectedItem); // so the new page shows correct data                
+                new UserRootPage().PushAsyncModalPage(selectedItemPage);                
             };
 
             var pageDetailLabel = new Label

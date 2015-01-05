@@ -88,7 +88,8 @@ namespace M2EMobile.ViewModels
 
         protected async override void OnAppearing()
         {
-            base.OnAppearing();           
+            base.OnAppearing();
+            App.HardwareBackPressed = () => Task.FromResult<bool?>(false);
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace M2EMobile.ViewModels
                                 UserType = loginViewModel.UserType
                             });
                     }
-                    await DisplayAlert("Success", "Succesfully logged in!!!", "OK", null);
+                    //await DisplayAlert("Success", "Succesfully logged in!!!", "OK", null);
                     await Navigation.PopModalAsync();
                     
                     await Navigation.PushModalAsync(new UserHomeView().GetUserHomeView());

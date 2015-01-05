@@ -25,6 +25,8 @@ namespace M2EMobile.Views
         public Page GetUserRootPage ()
 		{
             var masterMenuAbsLayout = new AbsoluteLayout();
+            App.HardwareBackPressed = () => Task.FromResult<bool?>(false);
+
             _userDetailPageData.FirstName = "loading...";
             _userDetailPageData.LastName = "Last Name : loading...";
             _userDetailPageData.Reputation = "Reputation : loading...";
@@ -150,6 +152,11 @@ namespace M2EMobile.Views
             _userDetailPageData.Reputation = "Reputation : " + userDetail.Payload.totalReputation;
             _userDetailPageData.TotalEarning = "TotalEarning : " + userDetail.Payload.availableBalance;
             _userDetailPageData.UserProfilePicImageSource = ImageSource.FromUri(new Uri(userDetail.Payload.imageUrl));
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();            
         }
     }
 }

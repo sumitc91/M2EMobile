@@ -154,5 +154,17 @@ namespace M2EMobile.Views.User
                 int len = userDetailString.Length;
             }
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            App.HardwareBackPressed = () => Task.FromResult<bool?>(true);
+        }
+
+        protected async override void OnDisappearing()
+        {
+            base.OnAppearing();
+            App.HardwareBackPressed = () => Task.FromResult<bool?>(false);
+        }
     }
 }
