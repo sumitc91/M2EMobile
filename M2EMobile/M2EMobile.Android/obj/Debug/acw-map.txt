@@ -1,4 +1,5 @@
 M2EMobile.Droid.MainActivity;m2emobile.droid.MainActivity
+M2EMobile.Droid.Page.LoginPageRenderer;m2emobile.droid.page.LoginPageRenderer
 Android.Support.V4.Content.Loader.IOnLoadCompleteListenerImplementor;mono.android.support.v4.content.Loader_OnLoadCompleteListenerImplementor
 Android.Support.V4.View.ViewPager.IOnPageChangeListenerImplementor;mono.android.support.v4.view.ViewPager_OnPageChangeListenerImplementor
 Android.Support.V4.Widget.DrawerLayout.IDrawerListenerImplementor;mono.android.support.v4.widget.DrawerLayout_DrawerListenerImplementor
@@ -7,6 +8,12 @@ Android.Support.V4.App.FragmentManager.IOnBackStackChangedListenerImplementor;mo
 Android.Support.V4.View.ActionProvider.ISubUiVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
 Android.Support.V4.View.ActionProvider.IVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_VisibilityListenerImplementor
 Android.Support.V4.View.MenuItemCompat.IOnActionExpandListenerImplementor;mono.android.support.v4.view.MenuItemCompat_OnActionExpandListenerImplementor
+Xamarin.Auth.AndroidAccountStore.SecretAccount;xamarin.auth.AndroidAccountStore_SecretAccount
+Xamarin.Auth.FormAuthenticatorActivity;xamarin.auth.FormAuthenticatorActivity
+Xamarin.Auth.FormAuthenticatorActivity.State;xamarin.auth.FormAuthenticatorActivity_State
+Xamarin.Auth.WebAuthenticatorActivity;xamarin.auth.WebAuthenticatorActivity
+Xamarin.Auth.WebAuthenticatorActivity.State;xamarin.auth.WebAuthenticatorActivity_State
+Xamarin.Auth.WebAuthenticatorActivity.Client;xamarin.auth.WebAuthenticatorActivity_Client
 Xamarin.Forms.Platform.Android.AndroidActivity;xamarin.forms.platform.android.AndroidActivity
 Xamarin.Forms.Platform.Android.BaseCellView;xamarin.forms.platform.android.BaseCellView
 Xamarin.Forms.Platform.Android.CellRenderer.RendererHolder;xamarin.forms.platform.android.CellRenderer_RendererHolder

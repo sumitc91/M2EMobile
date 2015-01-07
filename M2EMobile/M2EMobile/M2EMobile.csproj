@@ -59,6 +59,7 @@
     <Compile Include="Models\DataWrapper\LoginRequest.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\ToDoItem.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DirectoryService.cs" />
     <Compile Include="Services\IDirectoryService.cs" />
@@ -69,7 +70,9 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Pages\AccountsPage.cs" />
     <Compile Include="Views\Pages\ContractsPage.cs" />
+    <Compile Include="Views\Pages\FacebookLoginWebView.cs" />
     <Compile Include="Views\Pages\LeadsPage.cs" />
+    <Compile Include="Views\Pages\LoginPage.cs" />
     <Compile Include="Views\Pages\OpportunitiesPage.cs" />
     <Compile Include="Views\Pages\UserDetailPage.cs" />
     <Compile Include="Views\PleaseLoginMessagePage.cs" />
@@ -82,6 +85,10 @@
     <Compile Include="Views\User\UserTaskInformation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Facebook.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
       <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wp8+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -127,6 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\cautom_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\Facebook.dll" />
+    <Content Include="dll\Xamarin.Auth.Android.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />

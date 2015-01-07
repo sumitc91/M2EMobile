@@ -75,6 +75,7 @@ class MonoPackageManager_Resources {
 		"System.Net.Http.Extensions.dll",
 		"System.Net.Http.Primitives.dll",
 		"Xamarin.Android.Support.v4.dll",
+		"Xamarin.Auth.Android.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Xaml.dll",
@@ -130,6 +131,7 @@ class MonoPackageManager_Resources {
 		"Microsoft.Threading.Tasks.Extensions.dll",
 		"Microsoft.Threading.Tasks.dll",
 		"Newtonsoft.Json.dll",
+		"Facebook.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
