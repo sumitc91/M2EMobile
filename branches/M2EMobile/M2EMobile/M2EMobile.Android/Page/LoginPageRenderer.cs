@@ -30,7 +30,7 @@ namespace M2EMobile.Droid.Page
 
             var auth = new OAuth2Authenticator(
                 clientId: "574134802616730", // your OAuth2 client id
-                scope: "email", // the scopes for the particular API you're accessing, delimited by "+" symbols
+                scope: "email,user_about_me", // the scopes for the particular API you're accessing, delimited by "+" symbols
                 authorizeUrl: new Uri("https://m.facebook.com/dialog/oauth/"), // the auth URL for the service
                 redirectUrl: new Uri("https://www.cautom.com/SocialAuth/FBLogin/")); // the redirect URL for the service
 
