@@ -56,6 +56,7 @@
     <Compile Include="Models\DataResponse\UserResponse\UserNotificationList.cs" />
     <Compile Include="Models\DataResponse\UserResponse\UserNotificationsResponse.cs" />
     <Compile Include="Models\DataResponse\UserResponse\UserProductSurveyTemplateModel.cs" />
+    <Compile Include="Models\DataWrapper\FacebookUserDetailAPIResponseWrapper.cs" />
     <Compile Include="Models\DataWrapper\LoginRequest.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\ToDoItem.cs" />
