@@ -119,7 +119,7 @@ namespace M2EMobile.Views
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_FacebookLike:
-                        MDPage.Detail = new NavigationPage(new LeadsPage());
+                        MDPage.Detail = new LoginPage();
                         MDPage.IsPresented = false;
                         break;
                     case Constants.pageName_Referrals:
