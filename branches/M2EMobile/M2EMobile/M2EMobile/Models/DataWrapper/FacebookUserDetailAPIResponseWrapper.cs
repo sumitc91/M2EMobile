@@ -8,11 +8,12 @@ namespace M2EMobile.Models.DataWrapper
 {
     public class FacebookUserDetailAPIResponseWrapper
     {
-        //public FacebookUserDetailAPIResponseData data { get; set; }
+        public List<FacebookUserDetails> data { get; set; }
     }
 
     public class FacebookUserDetails
     {
+        public long uid { get; set; }
         public string username { get; set; }
         //Password = EncryptionClass.Md5Hash(Guid.NewGuid().ToString()),                        
         public string first_name { get; set; }

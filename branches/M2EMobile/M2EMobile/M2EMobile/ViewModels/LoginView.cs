@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using M2EMobile.Models;
 using M2EMobile.Models.DataResponse;
 using M2EMobile.Views;
+using M2EMobile.Views.Pages;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Button = Xamarin.Forms.Button;
@@ -53,6 +54,9 @@ namespace M2EMobile.ViewModels
             var helpButton = new Button { Text = "Help" };
             helpButton.Clicked += OnHelpClicked;
 
+            var facebookLoginButton = new Button {Text = "Facebook"};
+            facebookLoginButton.Clicked += facebookLoginButton_Clicked;
+
             var grid = new Grid()
             {
                 HorizontalOptions = LayoutOptions.CenterAndExpand
@@ -82,10 +86,16 @@ namespace M2EMobile.ViewModels
                 {
                     VerticalOptions = LayoutOptions.Center,
                     Padding = new Thickness(30),
-                    Children = { grid, usernameEntry, passwordEntry, loginButton },
+                    Children = { grid, usernameEntry, passwordEntry, loginButton, facebookLoginButton },
                 };
             }
 
+        }
+
+        async void facebookLoginButton_Clicked(object sender, EventArgs e)
+        {
+            //App.HardwareBackPressed = () => Task.FromResult<bool?>(true);
+            new LoginPage();
         }
 
         protected async override void OnAppearing()

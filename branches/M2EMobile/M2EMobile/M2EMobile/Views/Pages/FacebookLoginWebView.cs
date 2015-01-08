@@ -19,10 +19,10 @@ namespace M2EMobile.Views.Pages
             var fb = new FacebookClient(accessToken);
                     dynamic result = fb.Get("fql",
                                 new { q = "SELECT uid, first_name, last_name, sex, pic_big_with_logo, username FROM user WHERE uid=me()" });
-          
-            dynamic dynamicJsonResult = JObject.Parse(result);
-            var userDetail = JsonConvert.DeserializeObject<List<FacebookUserDetailAPIResponseWrapper>>(dynamicJsonResult.data);
-            
+            String temp = Convert.ToString(result);
+            dynamic dynamicJsonResult = JObject.Parse(temp);
+            var userDetail = JsonConvert.DeserializeObject<FacebookUserDetailAPIResponseWrapper>(temp);
+            DisplayAlert(userDetail.data[0].username, userDetail.data[0].first_name + userDetail.data[0].first_name,"OK",null);
         }
     }
 }

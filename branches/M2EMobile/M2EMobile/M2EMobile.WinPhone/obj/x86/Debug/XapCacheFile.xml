@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\PhoneApp1_Debug_x86.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="1/7/2015 5:20:59 PM">
-  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\obj\x86\Debug\M2EMobile.WinPhone.dll" archivePath="M2EMobile.WinPhone.dll" lastWriteTime="1/7/2015 5:20:52 PM" />
+﻿<xapCache source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\PhoneApp1_Debug_x86.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="1/8/2015 12:51:24 PM">
+  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\obj\x86\Debug\M2EMobile.WinPhone.dll" archivePath="M2EMobile.WinPhone.dll" lastWriteTime="1/8/2015 12:51:09 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="1/7/2015 1:41:59 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="1/7/2015 1:41:59 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="1/7/2015 1:41:59 PM" />
@@ -11,10 +11,10 @@
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="1/7/2015 1:41:58 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="1/7/2015 1:41:58 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="1/7/2015 1:41:58 PM" />
-  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1/7/2015 5:20:56 PM" />
+  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1/8/2015 12:51:16 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="1/7/2015 1:41:59 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="1/7/2015 1:41:59 PM" />
-  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\M2EMobile.dll" archivePath="M2EMobile.dll" lastWriteTime="1/7/2015 5:07:32 PM" />
+  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\M2EMobile.dll" archivePath="M2EMobile.dll" lastWriteTime="1/8/2015 12:51:01 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="1/5/2015 1:03:13 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\SQLite.Net.Async-PCL.2.4.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.Async.dll" archivePath="SQLite.Net.Async.dll" lastWriteTime="1/5/2015 1:02:50 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\SQLite.Net-PCL.2.4.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll" archivePath="SQLite.Net.dll" lastWriteTime="1/5/2015 1:03:00 PM" />
@@ -24,6 +24,7 @@
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\System.Net.Http.dll" archivePath="System.Net.Http.dll" lastWriteTime="1/5/2015 1:02:50 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll" archivePath="Microsoft.Threading.Tasks.Extensions.dll" lastWriteTime="1/5/2015 1:03:08 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="1/5/2015 1:02:58 PM" />
+  <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Facebook.dll" archivePath="Facebook.dll" lastWriteTime="1/7/2015 4:37:22 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\System.Net.Http.Primitives.dll" archivePath="System.Net.Http.Primitives.dll" lastWriteTime="1/5/2015 1:02:50 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile\bin\Debug\Microsoft.Threading.Tasks.dll" archivePath="Microsoft.Threading.Tasks.dll" lastWriteTime="1/5/2015 1:03:08 PM" />
   <file source="C:\svn\Pcongo_SVN_New\branches\M2EMobile\packages\Xamarin.Forms.1.0.6186\lib\WP80\Xamarin.Forms.Core.xml" archivePath="Xamarin.Forms.Core.xml" lastWriteTime="1/5/2015 1:03:00 PM" />
