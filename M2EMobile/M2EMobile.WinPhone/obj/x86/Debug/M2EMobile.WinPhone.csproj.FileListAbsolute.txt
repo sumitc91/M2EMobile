@@ -166,3 +166,4 @@ C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\obj\x86\De
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\obj\x86\Debug\M2EMobile.WinPhone.dll
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\obj\x86\Debug\M2EMobile.WinPhone.pdb
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\obj\x86\Debug\XapCacheFile.xml
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.WinPhone\Bin\x86\Debug\Facebook.dll

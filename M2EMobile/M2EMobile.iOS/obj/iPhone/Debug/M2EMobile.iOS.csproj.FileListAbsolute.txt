@@ -36,3 +36,4 @@ C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.iOS\obj\iPhone\Debu
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.iOS\obj\iPhone\Debug\M2EMobile.iOS.csprojResolveAssemblyReference.cache
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.iOS\obj\iPhone\Debug\FormsTemplateiOS.exe
 C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.iOS\obj\iPhone\Debug\FormsTemplateiOS.pdb
+C:\svn\Pcongo_SVN_New\branches\M2EMobile\M2EMobile\M2EMobile.iOS\bin\iPhone\Debug\Facebook.dll

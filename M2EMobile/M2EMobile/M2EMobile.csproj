@@ -58,6 +58,7 @@
     <Compile Include="Models\DataResponse\UserResponse\UserProductSurveyTemplateModel.cs" />
     <Compile Include="Models\DataWrapper\FacebookUserDetailAPIResponseWrapper.cs" />
     <Compile Include="Models\DataWrapper\LoginRequest.cs" />
+    <Compile Include="Models\FacebookAuth.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\ToDoItem.cs" />
     <Compile Include="Models\User.cs" />
